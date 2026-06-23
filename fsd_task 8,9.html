@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>JavaScript Demo</title>
+<style>
+body{
+background-color: LightCoral;
+font-family: Arial, sans-serif;
+display: flex;
+justify-content: center;
+align-items: center;
+height: 300px;
+margin: 0;
+}
+.container{
+background-color: white;
+padding: 30px;
+border-radius: 15px;
+text-align: center;
+box-shadow: 0px 4px 12px rgba(0,0,0,0.2);
+}
+h2{color: DarkSlateBlue;}
+button{
+background-color: DarkSeaGreen;
+color: black;
+border: none;
+padding: 12px 25px;
+margin: 8px;
+font-size: 16px;
+border-radius: 8px;
+cursor: pointer;
+}
+button:hover{
+background-color: DarkSlateBlue;
+color: white;
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2 id="message">Welcome!</h2>
+        <button id="alertBtn">Show Alert</button>
+        <button id="changeBtn">Change Text</button>
+    </div>
+    <script>
+        const alertButton = document.getElementById("alertBtn");
+        const changeButton = document.getElementById("changeBtn");
+        const message = document.getElementById("message");
+        alertButton.addEventListener("click", function() {
+            alert("Hello! Welcome to JavaScript!");
+        });
+        changeButton.addEventListener("click", function() {
+            message.textContent = "Text Changed Successfully! ";
+        });
+    </script>
+</body>
+</html>
