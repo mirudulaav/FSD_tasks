@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Cafe Reservation and Order</title>
+<style>
+        body{
+            font-family: Arial, sans-serif;
+            background-color: #f4f1ea;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container{
+            background-color: white;
+            padding: 30px;
+            border-radius: 15px;
+            width: 350px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        h2{
+            color: #6f4e37;
+        }
+
+        input{
+            width: 90%;
+            padding: 10px;
+            margin-top: 10px;
+            border: 1px solid #c8b6a6;
+            border-radius: 8px;
+        }
+
+        button{
+            margin-top: 15px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            background-color: #a67b5b;
+            color: white;
+            font-size: 15px;
+            cursor: pointer;
+        }
+
+        button:hover{
+            background-color: #8b5e3c;
+        }
+
+        #result, #message{
+            margin-top: 15px;
+            font-weight: bold;
+        }
+</style>
+</head>
+<body>
+<div class="container">
+    <h2>Cafe Reservation and Order</h2>
+    <input type="text" id="customerName" placeholder="Enter your name">
+    <br>
+    <button onclick="validateForm()">Reserve Table</button>
+    <p id="result"></p>
+    <button id="orderBtn">Place Coffee Order</button>
+    <p id="message"></p>
+</div>
+<script>
+    // Text Input Validation
+    function validateForm() {
+        let name = document.getElementById("customerName").value;
+        if(name.trim() === "") {
+            document.getElementById("result").innerHTML =
+            "Please enter your name.";
+            document.getElementById("result").style.color = "red";
+        } else {
+            document.getElementById("result").innerHTML =
+            "Reservation confirmed for " + name + ".";
+            document.getElementById("result").style.color = "green";
+        }
+    }
+    // Event Listener for Button
+    document.getElementById("orderBtn").addEventListener("click", function() {
+        document.getElementById("message").innerHTML =
+        "Your coffee order has been placed successfully.";
+        document.getElementById("message").style.color = "green";
+    });
+</script>
+</body>
+</html>
