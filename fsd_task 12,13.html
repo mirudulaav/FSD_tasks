@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Button Event and Input Validation</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #EAF6F6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            text-align: center;
+            width: 350px;
+        }
+
+        h2 {
+            color: #2E8B57;
+        }
+
+        input {
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid gray;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        button {
+            background-color: #2E8B57;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #256f46;
+        }
+
+        #message {
+            margin-top: 15px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+    <h2>Username Validation</h2>
+
+    <input type="text" id="username" placeholder="Enter Username">
+
+    <br>
+
+    <button id="checkBtn">Validate</button>
+
+    <p id="message"></p>
+</div>
+
+<script>
+
+document.getElementById("checkBtn").addEventListener("click", validateUsername);
+
+function validateUsername() {
+
+    let username = document.getElementById("username").value;
+    let message = document.getElementById("message");
+
+    if (username.trim() === "") {
+        message.innerHTML = "Username cannot be empty.";
+        message.style.color = "red";
+    }
+    else if (username.length < 5) {
+        message.innerHTML = "Username must contain at least 5 characters.";
+        message.style.color = "orange";
+    }
+    else {
+        message.innerHTML = "Username is valid.";
+        message.style.color = "green";
+    }
+
+}
+
+</script>
+
+</body>
+</html>
